@@ -17,6 +17,22 @@
 
 Projects wishing to use pom-bigdataviewer as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
 
+	<developers>
+		<developer>
+			<id>tpietzsch</id>
+			<name>Tobias Pietzsch</name>
+			<email>tobias.pietzsch@gmail.com</email>
+			<organization>MPI-CBG at Dresden</organization>
+			<organizationUrl>http://mpi-cbg.de/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
 	<properties>
 		<jhdf5.version>13.06.2</jhdf5.version>
 		<gson.version>2.2.4</gson.version>
