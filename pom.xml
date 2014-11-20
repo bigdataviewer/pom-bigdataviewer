@@ -112,10 +112,10 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</profiles>
 
 	<scm>
-		<connection>scm:git:git://github.com/tpietzsch/pom-bigdataviewer</connection>
-		<developerConnection>scm:git:git@github.com:tpietzsch/pom-bigdataviewer</developerConnection>
+		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
+		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
 		<tag>HEAD</tag>
-		<url>https://github.com/tpietzsch/pom-bigdataviewer</url>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
 	</scm>
 
 	<repositories>
