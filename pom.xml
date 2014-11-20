@@ -37,13 +37,49 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		<jhdf5.version>13.06.2</jhdf5.version>
 		<gson.version>2.2.4</gson.version>
 		<jetty-server.version>9.1.3.v20140225</jetty-server.version>
-		<spim_data.version>1.0.0-beta-3</spim_data.version>
+
+		<!-- BigDataViewer sub-projects -->
+		<Descriptor_based_registration.version>2.0.0</Descriptor_based_registration.version>
 		<SPIM_Registration.version>2.0.0</SPIM_Registration.version>
 		<bigdataviewer-core.version>1.0.0</bigdataviewer-core.version>
+		<bigdataviewer-server.version>1.0.0</bigdataviewer-server.version>
+		<bigdataviewer_fiji.version>1.0.0</bigdataviewer_fiji.version>
+		<spim_data.version>1.0.0-beta-3</spim_data.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>Descriptor_based_registration</artifactId>
+				<version>${Descriptor_based_registration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>SPIM_Registration</artifactId>
+				<version>${SPIM_Registration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer-core</artifactId>
+				<version>${bigdataviewer-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer-server</artifactId>
+				<version>${bigdataviewer-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer_fiji</artifactId>
+				<version>${bigdataviewer_fiji.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>spim_data</artifactId>
+				<version>${spim_data.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>cisd</groupId>
 				<artifactId>jhdf5</artifactId>
@@ -58,21 +94,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-server</artifactId>
 				<version>${jetty-server.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>spim_data</artifactId>
-				<version>${spim_data.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>SPIM_Registration</artifactId>
-				<version>${SPIM_Registration.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>bigdataviewer-core</artifactId>
-				<version>${bigdataviewer-core.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -90,8 +111,12 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 				</file>
 			</activation>
 			<properties>
-				<spim_data.version>LATEST</spim_data.version>
+				<Descriptor_based_registration.version>LATEST</Descriptor_based_registration.version>
+				<SPIM_Registration.version>LATEST</SPIM_Registration.version>
 				<bigdataviewer-core.version>LATEST</bigdataviewer-core.version>
+				<bigdataviewer-server.version>LATEST</bigdataviewer-server.version>
+				<bigdataviewer_fiji.version>LATEST</bigdataviewer_fiji.version>
+				<spim_data.version>LATEST</spim_data.version>
 			</properties>
 			<repositories>
 				<repository>
