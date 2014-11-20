@@ -117,6 +117,14 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		<tag>HEAD</tag>
 		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
 	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/pom-bigdataviewer/</url>
+	</ciManagement>
 
 	<repositories>
 		<!-- NB: for project parent -->
