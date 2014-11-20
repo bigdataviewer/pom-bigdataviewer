@@ -13,7 +13,9 @@
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
-	<description>parent pom for bigdataviewer projects</description>
+	<description>Parent POM for BigDataViewer-based projects. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
+
+Projects wishing to use pom-bigdataviewer as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
 
 	<properties>
 		<jhdf5.version>13.06.2</jhdf5.version>
