@@ -33,6 +33,21 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		</developer>
 	</developers>
 
+	<scm>
+		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
+		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/pom-bigdataviewer/</url>
+	</ciManagement>
+
 	<properties>
 		<jhdf5.version>13.06.2</jhdf5.version>
 		<gson.version>2.2.4</gson.version>
@@ -46,6 +61,14 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		<bigdataviewer_fiji.version>1.0.0</bigdataviewer_fiji.version>
 		<spim_data.version>1.0.0-beta-3</spim_data.version>
 	</properties>
+
+	<repositories>
+		<!-- NB: for project parent -->
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
@@ -135,27 +158,4 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 			</pluginRepositories>
 		</profile>
 	</profiles>
-
-	<scm>
-		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
-		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
-	</scm>
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/bigdataviewer/pom-bigdataviewer/issues</url>
-	</issueManagement>
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/pom-bigdataviewer/</url>
-	</ciManagement>
-
-	<repositories>
-		<!-- NB: for project parent -->
-		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-	</repositories>
 </project>
