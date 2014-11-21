@@ -13,19 +13,96 @@
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
-	<description>parent pom for bigdataviewer projects</description>
+	<description>Parent POM for BigDataViewer-based projects. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
+
+Projects wishing to use pom-bigdataviewer as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
+
+	<developers>
+		<developer>
+			<id>tpietzsch</id>
+			<name>Tobias Pietzsch</name>
+			<email>tobias.pietzsch@gmail.com</email>
+			<organization>MPI-CBG at Dresden</organization>
+			<organizationUrl>http://mpi-cbg.de/</organizationUrl>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+				<role>maintainer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
+		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
+		<tag>HEAD</tag>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/bigdataviewer/pom-bigdataviewer/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://jenkins.imagej.net/job/pom-bigdataviewer/</url>
+	</ciManagement>
 
 	<properties>
 		<jhdf5.version>13.06.2</jhdf5.version>
 		<gson.version>2.2.4</gson.version>
 		<jetty-server.version>9.1.3.v20140225</jetty-server.version>
-		<spim_data.version>1.0.0-beta-3</spim_data.version>
+
+		<!-- BigDataViewer sub-projects -->
+		<Descriptor_based_registration.version>2.0.0</Descriptor_based_registration.version>
 		<SPIM_Registration.version>2.0.0</SPIM_Registration.version>
 		<bigdataviewer-core.version>1.0.0</bigdataviewer-core.version>
+		<bigdataviewer-server.version>1.0.0</bigdataviewer-server.version>
+		<bigdataviewer_fiji.version>1.0.0</bigdataviewer_fiji.version>
+		<spim_data.version>1.0.0-beta-3</spim_data.version>
 	</properties>
+
+	<repositories>
+		<!-- NB: for project parent -->
+		<repository>
+			<id>imagej.public</id>
+			<url>http://maven.imagej.net/content/groups/public</url>
+		</repository>
+	</repositories>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>Descriptor_based_registration</artifactId>
+				<version>${Descriptor_based_registration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>SPIM_Registration</artifactId>
+				<version>${SPIM_Registration.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer-core</artifactId>
+				<version>${bigdataviewer-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer-server</artifactId>
+				<version>${bigdataviewer-server.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>bigdataviewer_fiji</artifactId>
+				<version>${bigdataviewer_fiji.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>sc.fiji</groupId>
+				<artifactId>spim_data</artifactId>
+				<version>${spim_data.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>cisd</groupId>
 				<artifactId>jhdf5</artifactId>
@@ -41,27 +118,14 @@
 				<artifactId>jetty-server</artifactId>
 				<version>${jetty-server.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>spim_data</artifactId>
-				<version>${spim_data.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>SPIM_Registration</artifactId>
-				<version>${SPIM_Registration.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>bigdataviewer-core</artifactId>
-				<version>${bigdataviewer-core.version}</version>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
 	<profiles>
-		<!-- developer profile: Use LATEST version of spim_data and bigdataviewer-core 
-			 if file ~/.scijava/dev.bdv exists -->
+		<!-- This developer profile makes it easy to pin to SNAPSHOT versions.
+		     Add an empty dev.bdv file in your ~/.scijava directory, and
+		     dependencies will automatically update! You may also need to refresh
+		     your IDE; e.g., in Eclipse: right click, Maven > Update Project... -->
 		<profile>
 			<id>dev.bdv</id>
 			<activation>
@@ -70,8 +134,12 @@
 				</file>
 			</activation>
 			<properties>
-				<spim_data.version>LATEST</spim_data.version>
+				<Descriptor_based_registration.version>LATEST</Descriptor_based_registration.version>
+				<SPIM_Registration.version>LATEST</SPIM_Registration.version>
 				<bigdataviewer-core.version>LATEST</bigdataviewer-core.version>
+				<bigdataviewer-server.version>LATEST</bigdataviewer-server.version>
+				<bigdataviewer_fiji.version>LATEST</bigdataviewer_fiji.version>
+				<spim_data.version>LATEST</spim_data.version>
 			</properties>
 			<repositories>
 				<repository>
@@ -90,19 +158,4 @@
 			</pluginRepositories>
 		</profile>
 	</profiles>
-
-	<scm>
-		<connection>scm:git:git://github.com/tpietzsch/pom-bigdataviewer</connection>
-		<developerConnection>scm:git:git@github.com:tpietzsch/pom-bigdataviewer</developerConnection>
-		<tag>HEAD</tag>
-		<url>https://github.com/tpietzsch/pom-bigdataviewer</url>
-	</scm>
-
-	<repositories>
-		<!-- NB: for project parent -->
-		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-	</repositories>
 </project>
