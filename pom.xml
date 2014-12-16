@@ -11,7 +11,6 @@
 	<artifactId>pom-bigdataviewer</artifactId>
 	<version>1.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<!-- test -->
 
 	<name>BigDataViewer Projects</name>
 	<description>Parent POM for BigDataViewer-based projects. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
@@ -60,7 +59,7 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		<bigdataviewer-core.version>1.0.1</bigdataviewer-core.version>
 		<bigdataviewer-server.version>1.0.1</bigdataviewer-server.version>
 		<bigdataviewer_fiji.version>1.0.1</bigdataviewer_fiji.version>
-		<spim_data.version>1.0.0-beta-4</spim_data.version>
+		<spim_data.version>1.0.0-beta-5</spim_data.version>
 	</properties>
 
 	<repositories>
