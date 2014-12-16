@@ -11,6 +11,7 @@
 	<artifactId>pom-bigdataviewer</artifactId>
 	<version>1.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<!-- test -->
 
 	<name>BigDataViewer Projects</name>
 	<description>Parent POM for BigDataViewer-based projects. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
