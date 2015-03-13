@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-fiji</artifactId>
-		<version>7.1.0</version>
+		<version>7.3.0</version>
 	</parent>
 
 	<artifactId>pom-bigdataviewer</artifactId>
-	<version>1.0.12-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
@@ -49,10 +49,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</ciManagement>
 
 	<properties>
-		<jhdf5.version>14.12.0</jhdf5.version>
-		<gson.version>2.2.4</gson.version>
-		<jetty-server.version>9.1.3.v20140225</jetty-server.version>
-
 		<!-- BigDataViewer sub-projects -->
 		<Descriptor_based_registration.version>2.0.7</Descriptor_based_registration.version>
 		<SPIM_Registration.version>2.1.0</SPIM_Registration.version>
@@ -101,22 +97,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 				<groupId>sc.fiji</groupId>
 				<artifactId>spim_data</artifactId>
 				<version>${spim_data.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>cisd</groupId>
-				<artifactId>jhdf5</artifactId>
-				<version>${jhdf5.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.google.code.gson</groupId>
-				<artifactId>gson</artifactId>
-				<version>${gson.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-server</artifactId>
-				<version>${jetty-server.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
