@@ -102,10 +102,12 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</dependencyManagement>
 
 	<profiles>
-		<!-- This developer profile makes it easy to pin to SNAPSHOT versions.
-		     Add an empty dev.bdv file in your ~/.scijava directory, and
-		     dependencies will automatically update! You may also need to refresh
-		     your IDE; e.g., in Eclipse: right click, Maven > Update Project... -->
+		<!--
+		This developer profile makes it easy to pin to SNAPSHOT versions.
+		Add an empty dev.bdv file in your ~/.scijava directory, and
+		dependencies will automatically update! You may also need to refresh
+		your IDE; e.g., in Eclipse: right click, Maven > Update Project...
+		-->
 		<profile>
 			<id>dev.bdv</id>
 			<activation>
