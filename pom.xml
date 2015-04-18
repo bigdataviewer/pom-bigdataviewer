@@ -51,11 +51,11 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	<properties>
 		<!-- BigDataViewer sub-projects -->
 		<Descriptor_based_registration.version>2.0.11</Descriptor_based_registration.version>
-		<SPIM_Registration.version>2.2.0</SPIM_Registration.version>
-		<bigdataviewer-core.version>1.1.1</bigdataviewer-core.version>
+		<SPIM_Registration.version>2.3.0</SPIM_Registration.version>
+		<bigdataviewer-core.version>1.1.2</bigdataviewer-core.version>
 		<bigdataviewer-server.version>1.0.3</bigdataviewer-server.version>
 		<bigdataviewer_fiji.version>1.0.10</bigdataviewer_fiji.version>
-		<spim_data.version>1.0.0-beta-5</spim_data.version>
+		<spim_data.version>1.0.0-beta-7</spim_data.version>
 	</properties>
 
 	<repositories>
