@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-fiji</artifactId>
-		<version>16.2.0</version>
+		<version>18.1.0</version>
 	</parent>
 
 	<artifactId>pom-bigdataviewer</artifactId>
-	<version>2.2.3-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
@@ -89,9 +89,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</ciManagement>
 
 	<properties>
-		<!-- BigDataViewer sub-projects -->
-		<Descriptor_based_registration.version>2.0.11</Descriptor_based_registration.version>
-		<SPIM_Registration.version>3.0.0</SPIM_Registration.version>
 		<bigdataviewer-core.version>2.1.0</bigdataviewer-core.version>
 		<bigdataviewer-server.version>2.0.0</bigdataviewer-server.version>
 		<bigdataviewer_fiji.version>2.0.0</bigdataviewer_fiji.version>
@@ -108,16 +105,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>Descriptor_based_registration</artifactId>
-				<version>${Descriptor_based_registration.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>SPIM_Registration</artifactId>
-				<version>${SPIM_Registration.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>sc.fiji</groupId>
 				<artifactId>bigdataviewer-core</artifactId>
@@ -156,8 +143,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 				</file>
 			</activation>
 			<properties>
-				<Descriptor_based_registration.version>LATEST</Descriptor_based_registration.version>
-				<SPIM_Registration.version>LATEST</SPIM_Registration.version>
 				<bigdataviewer-core.version>LATEST</bigdataviewer-core.version>
 				<bigdataviewer-server.version>LATEST</bigdataviewer-server.version>
 				<bigdataviewer_fiji.version>LATEST</bigdataviewer_fiji.version>
