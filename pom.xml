@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>pom-bigdataviewer</artifactId>
-	<version>3.2.0-SNAPSHOT</version>
+	<version>3.2.0</version>
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
@@ -65,7 +65,7 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	<scm>
 		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
 		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
-		<tag>HEAD</tag>
+		<tag>pom-bigdataviewer-3.2.0</tag>
 		<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
 	</scm>
 	<issueManagement>
