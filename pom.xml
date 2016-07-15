@@ -5,11 +5,11 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-fiji</artifactId>
-		<version>22.3.0</version>
+		<version>24.1.0</version>
 	</parent>
 
 	<artifactId>pom-bigdataviewer</artifactId>
-	<version>3.2.1-SNAPSHOT</version>
+	<version>3.3.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
@@ -75,10 +75,11 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</ciManagement>
 
 	<properties>
-		<bigdataviewer-core.version>2.4.0</bigdataviewer-core.version>
+		<bigdataviewer-core.version>2.5.1</bigdataviewer-core.version>
 		<bigdataviewer-server.version>2.0.0</bigdataviewer-server.version>
 		<bigdataviewer_fiji.version>2.1.0</bigdataviewer_fiji.version>
 		<spim_data.version>2.0.1</spim_data.version>
+		<imglib2.version>3.2.0</imglib2.version>
 	</properties>
 
 	<repositories>
@@ -110,6 +111,11 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 				<groupId>sc.fiji</groupId>
 				<artifactId>spim_data</artifactId>
 				<version>${spim_data.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.imglib2</groupId>
+				<artifactId>imglib2</artifactId>
+				<version>${imglib2.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
