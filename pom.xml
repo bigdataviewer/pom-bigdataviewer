@@ -120,7 +120,7 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 			<dependency>
 				<groupId>org.scijava</groupId>
 				<artifactId>ui-behaviour</artifactId>
-				<version>${ui-behaviour.verion}</version>
+				<version>${ui-behaviour.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
