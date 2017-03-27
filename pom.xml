@@ -83,7 +83,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</properties>
 
 	<repositories>
-		<!-- NB: for project parent -->
 		<repository>
 			<id>imagej.public</id>
 			<url>http://maven.imagej.net/content/groups/public</url>
