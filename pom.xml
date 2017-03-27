@@ -70,8 +70,8 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		<url>https://github.com/bigdataviewer/pom-bigdataviewer/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/pom-bigdataviewer/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/bigdataviewer/pom-bigdataviewer</url>
 	</ciManagement>
 
 	<properties>
