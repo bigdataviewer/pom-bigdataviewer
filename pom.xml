@@ -3,19 +3,32 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>sc.fiji</groupId>
-		<artifactId>pom-fiji</artifactId>
-		<version>26.1.1</version>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>14.0.0</version>
+		<relativePath />
 	</parent>
 
+	<groupId>sc.fiji</groupId>
 	<artifactId>pom-bigdataviewer</artifactId>
-	<version>4.0.2-SNAPSHOT</version>
+	<version>5.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>BigDataViewer Projects</name>
-	<description>Parent POM for BigDataViewer-based projects. It ensures that projects all use a compatible build environment, including Java version, as well as versions of dependencies and plugins.
-
-Projects wishing to use pom-bigdataviewer as a parent project need to override the &lt;name&gt;, &lt;description&gt;, &lt;url&gt;, &lt;inceptionYear&gt;, &lt;organization&gt;, &lt;licenses&gt;, &lt;developers&gt;, &lt;scm&gt;, &lt;issueManagement&gt; and &lt;ciManagement&gt; sections.</description>
+	<description>Obsolete parent POM. Extend org.scijava:pom-scijava instead!</description>
+	<url>https://github.com/bigdataviewer/pom-bigdataviewer</url>
+	<inceptionYear>2014</inceptionYear>
+	<organization>
+		<name>BigDataViewer</name>
+		<url>https://imagej.net/BigDataViewer</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>Simplified BSD License</name>
+			<url>https://opensource.org/licenses/BSD-2-Clause</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
 	<developers>
 		<developer>
@@ -25,10 +38,6 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 			<roles>
 				<role>founder</role>
 				<role>lead</role>
-				<role>developer</role>
-				<role>debugger</role>
-				<role>reviewer</role>
-				<role>support</role>
 				<role>maintainer</role>
 			</roles>
 		</developer>
@@ -59,6 +68,13 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 		</contributor>
 	</contributors>
 
+	<mailingLists>
+		<mailingList>
+			<name>ImageJ Forum</name>
+			<archive>http://forum.imagej.net/</archive>
+		</mailingList>
+	</mailingLists>
+
 	<scm>
 		<connection>scm:git:git://github.com/bigdataviewer/pom-bigdataviewer</connection>
 		<developerConnection>scm:git:git@github.com:bigdataviewer/pom-bigdataviewer</developerConnection>
@@ -75,90 +91,28 @@ Projects wishing to use pom-bigdataviewer as a parent project need to override t
 	</ciManagement>
 
 	<properties>
-		<bigdataviewer-core.version>3.0.0</bigdataviewer-core.version>
-		<bigdataviewer-server.version>2.1.0</bigdataviewer-server.version>
-		<bigdataviewer_fiji.version>3.0.0</bigdataviewer_fiji.version>
-		<spim_data.version>2.2.0</spim_data.version>
-		<ui-behaviour.version>1.1.0</ui-behaviour.version>
+		<license.licenseName>bsd_2</license.licenseName>
+		<license.copyrightOwners>BigDataViewer developers.</license.copyrightOwners>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>imagej.public</id>
-			<url>http://maven.imagej.net/content/groups/public</url>
-		</repository>
-	</repositories>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>bigdataviewer-core</artifactId>
-				<version>${bigdataviewer-core.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>bigdataviewer-server</artifactId>
-				<version>${bigdataviewer-server.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>bigdataviewer_fiji</artifactId>
-				<version>${bigdataviewer_fiji.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>sc.fiji</groupId>
-				<artifactId>spim_data</artifactId>
-				<version>${spim_data.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>net.imglib2</groupId>
-				<artifactId>imglib2</artifactId>
-				<version>${imglib2.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.scijava</groupId>
-				<artifactId>ui-behaviour</artifactId>
-				<version>${ui-behaviour.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<profiles>
-		<!--
-		This developer profile makes it easy to pin to SNAPSHOT versions.
-		Add an empty dev.bdv file in your ~/.scijava directory, and
-		dependencies will automatically update! You may also need to refresh
-		your IDE; e.g., in Eclipse: right click, Maven > Update Project...
-		-->
-		<profile>
-			<id>dev.bdv</id>
-			<activation>
-				<file>
-					<exists>${user.home}/.scijava/dev.bdv</exists>
-				</file>
-			</activation>
-			<properties>
-				<bigdataviewer-core.version>LATEST</bigdataviewer-core.version>
-				<bigdataviewer-server.version>LATEST</bigdataviewer-server.version>
-				<bigdataviewer_fiji.version>LATEST</bigdataviewer_fiji.version>
-				<spim_data.version>LATEST</spim_data.version>
-			</properties>
-			<repositories>
-				<repository>
-					<id>imagej.public</id>
-					<url>http://maven.imagej.net/content/groups/public</url>
-				</repository>
-			</repositories>
-			<pluginRepositories>
-				<pluginRepository>
-					<id>imagej.public</id>
-					<url>http://maven.imagej.net/content/groups/public</url>
-					<snapshots>
-						<enabled>true</enabled>
-					</snapshots>
-				</pluginRepository>
-			</pluginRepositories>
-		</profile>
-	</profiles>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<configuration>
+					<rules combine.self="override">
+						<requireProperty>
+							<property>project.artifactId</property>
+							<regex>pom-bigdataviewer</regex>
+							<regexMessage>~
++------------------------------------------------------------------------------+
+| The pom-bigdataviewer parent is obsolete. Please extend pom-scijava instead! |
++------------------------------------------------------------------------------+
+~</regexMessage>
+						</requireProperty>
+					</rules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
